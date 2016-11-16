@@ -30,12 +30,12 @@ conf = ConfigParser()
 conf.read(['setup.cfg'])
 metadata = dict(conf.items('metadata'))
 
-PACKAGENAME = metadata.get('package_name', 'packagename')
-DESCRIPTION = metadata.get('description', 'Astropy affiliated package')
-AUTHOR = metadata.get('author', '')
+PACKAGENAME = metadata.get('package_name', '{{ cookiecutter.package_slug }}')
+DESCRIPTION = metadata.get('description', '{{ cookiecutter.short_description }}')
+AUTHOR = metadata.get('author', '{{ cookiecutter.author_name }}')
 AUTHOR_EMAIL = metadata.get('author_email', '')
 LICENSE = metadata.get('license', 'unknown')
-URL = metadata.get('url', 'http://astropy.org')
+URL = metadata.get('url', '{{ cookiecutter.project_url }}')
 
 # Get the long description from the package's docstring
 __import__(PACKAGENAME)
@@ -106,7 +106,7 @@ setup(name=PACKAGENAME,
       version=VERSION,
       description=DESCRIPTION,
       scripts=scripts,
-      install_requires=['astropy'],
+      install_requires={{ cookiecutter.install_requires }},
       author=AUTHOR,
       author_email=AUTHOR_EMAIL,
       license=LICENSE,
