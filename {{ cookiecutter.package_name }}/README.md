@@ -1,8 +1,9 @@
-# {{ cookiecutter.short_description }}
+# {{ cookiecutter.package_name }}
+## {{ cookiecutter.short_description }}
 
-.. image:: http://img.shields.io/badge/powered%20by-AstroPy-orange.svg?style=flat
-    :target: http://www.astropy.org
-    :alt: Powered by Astropy Badge
+.. image:: https://img.shields.io/badge/powered%20by-SunPy-orange.svg?style=flat
+    :target: http://www.sunpy.org
+    :alt: Powered by SunPy Badge
 
 {{ cookiecutter.long_description }}
 
