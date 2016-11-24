@@ -7,7 +7,7 @@ This is an Astropy affiliated package.
 # Affiliated packages may add whatever they like to this file, but
 # should keep this content at the top.
 # ----------------------------------------------------------------------------
-from ._{{ cookiecutter._parent_project }}_init import *
+from ._astropy_init import *
 # ----------------------------------------------------------------------------
 
 if not _ASTROPY_SETUP_:

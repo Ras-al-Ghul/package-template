@@ -69,6 +69,11 @@ exclude_patterns.append('_templates')
 rst_epilog += """
 """
 
+# Add intersphinx mappings here i.e.
+# intersphinx_mapping['sunpy'] = ("http://docs.sunpy.org/en/stable", None)
+{% if cookiecutter._parent_project == 'sunpy' %}
+intersphinx_mapping['sunpy'] = ("http://docs.sunpy.org/en/stable", None)
+{% endif %}
 # -- Project information ------------------------------------------------------
 
 # This does not *have* to match the package name, but typically does
@@ -120,7 +125,13 @@ html_theme_options = {
     }
 
 {% endif %}
-
+{% if cookiecutter.sphinx_theme == "sphinx_rtd_theme" %}
+try:
+    import sphinx_rtd_theme
+    html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
+except ImportError:
+    html_theme = 'default'
+{% endif %}
 # Custom sidebar templates, maps document names to template names.
 #html_sidebars = {}
 
