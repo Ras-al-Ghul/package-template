@@ -73,6 +73,7 @@ rst_epilog += """
 # intersphinx_mapping['sunpy'] = ("http://docs.sunpy.org/en/stable", None)
 {% if cookiecutter._parent_project == 'sunpy' %}
 intersphinx_mapping['sunpy'] = ("http://docs.sunpy.org/en/stable", None)
+
 {% endif %}
 # -- Project information ------------------------------------------------------
 
@@ -151,6 +152,7 @@ html_title = '{0} v{1}'.format(project, release)
 # Output file base name for HTML help builder.
 htmlhelp_basename = project + 'doc'
 
+html_favicon = "./favicon.ico"
 
 # -- Options for LaTeX output -------------------------------------------------
 
